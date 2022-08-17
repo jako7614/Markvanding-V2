@@ -1,0 +1,267 @@
+.createmachinemodaltext {
+    width: fit-content;
+    margin: auto;
+    font-size: 30px;
+}
+
+.createmachineid {
+    font-size: 18px;
+    width: 80%;
+    height: 36px;
+    border-radius: 10px;
+    border: solid rgb(230, 230, 230) 1px;
+}
+
+.createmachinemodal {
+    height: 270px;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: 0.5s;
+  overflow: auto;
+  transition: all 0.3s linear;
+}
+
+#machinemodal {
+  height: 316px;
+}
+
+#removemachinemodal {
+  height: 180px;
+}
+
+#removepumpmodal {
+  height: 180px;
+}
+
+.modalforms {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 24px;
+  background: rgb(245, 245, 245);
+  width: 450px;
+  top: 21%;
+  margin: auto;
+  text-align: left;
+}
+
+.modalDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pumpHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.modalLabelContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.modallabelbox {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.modalforms label > span{
+    display: inline-block;
+    width: 30%;
+  font-size: 24px;
+  color: #777777;
+}
+
+.removemodalbuttonspan {
+  display: inline-block;
+  margin-left: 4%;
+  width: 30%;
+}
+
+#cancelmachinemodal {
+  border: solid orange 1px;
+  color: orange;
+}
+
+#cancelpumpmodal {
+  border: solid orange 1px;
+  color: orange;
+}
+
+.removemodalbutton {
+  color: #DF4848;
+  width: 140px;
+  border: solid #DF4848 1px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+}
+
+.modalbuttons {
+  width: 140px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.cancelmodalbutton {
+  border: solid blue 1px;
+  margin-right: 5px;
+  width: 140px;
+  height: 36px;
+  border-radius: 10px;
+  color: blue;
+}
+
+.updatemodalbutton {
+  background-color: #42CB6B;
+  border: none;
+  color: white;
+  margin-left: 5px;
+}
+
+.modalbuttonbox {
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 10px
+}
+
+.labelremovemodal {
+  width: fit-content;
+  margin: auto;
+  padding-top: 20px;
+  margin-bottom: 60px;
+}
+
+#removemachinemodalbutton {
+  color: white;
+  background: #DF4848;
+}
+
+#removepumpmodalbutton {
+  color: white;
+  background: #DF4848;
+}
+
+.modalinputs {
+  font-size: 18px;
+  width: 180px;
+  height: 36px;
+  border-radius: 10px;
+  border: solid rgb(230, 230, 230) 1px;
+}
+
+#createmodallabelbox {
+  margin: auto;
+}
+
+#createmodal {
+  height: 400px;
+}
+
+#createmodalbuttonbox {
+  margin-top: 50px;
+}
+
+.createmodalinputs {
+  font-size: 18px;
+  width: 80%;
+  height: 36px;
+  border-radius: 10px;
+  border: solid rgb(230, 230, 230) 1px;
+  margin-left: 10%;
+  margin-top: 20px;
+}
+
+  
+
+.bigmodalinputs {
+  font-size: 30px;
+  width: 220px;
+  height: 54px;
+  border-radius: 10px;
+  border: solid rgb(230, 230, 230) 1px;
+}
+
+.pump {        
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  background: whitesmoke;
+  border-radius: 24px;
+  border: 1px solid lightgray;
+  overflow: hidden;
+}
+.pump div {
+  font-size: 24px;
+}
+.machine {        
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  background: whitesmoke;
+  border-radius: 24px;
+  border: 1px solid lightgray;
+  overflow: hidden;
+}
+.pumpContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.machineContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.machine div {
+  font-size: 24px;
+}
+
+@media screen and (max-width:480px){
+  .modalforms{
+    width: 300px;
+  }
+  .modalinputs{
+    width: 140px;
+  }
+  .bigmodalinputs{
+    width: 140px;
+  }
+  .modallabelbox{
+    width: 90%;
+  }
+  .modalLabelContainer label{
+    font-size: 24px;
+  }
+}

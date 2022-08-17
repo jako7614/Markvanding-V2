@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://doadmin:3UZcBBBtTZsUTUYJ@antennacluster-do-user-10593557-0.b.db.ondigitalocean.com:25060/markvandingdb"
+}
+
+model Machine {
+    id              Int @id
+    pumpname        String?
+    time            DateTime?
+    active          Boolean
+    maintenances    Maintenance[]
+    nozzle          String?
+    model           String?
+
+}
+
+model Pump {
+    id              Int @id @default(autoincrement())
+    name            String @unique
+    number          String @unique
+    active          Boolean?
+    startcode       String?
+    stopcode        String?
+}
+
+model Maintenance {
+    id              Int @id @default(autoincrement())
+    machine         Machine? @relation(fields: [machineId], references: [id])
+    machineId       Int?
+    time            DateTime?
+    note            String?
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+}
+
+model VerificationToken {
+  id         String    @id @default(cuid())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
