@@ -13,7 +13,7 @@ const Overview = ({machineProps, pumpProps}) => {
   // const {loggedIn, setLoggedIn} = UseAppContext()
   const [machines, setMachines] = useState(machineProps)
   const [pumps, setPumps] = useState(pumpProps)
-  const [displayMode, setDisplayMode] = useState(false)
+  const [displayMode, setDisplayMode] = useState(true)
 
   const router = useRouter();
 
@@ -79,7 +79,7 @@ const Overview = ({machineProps, pumpProps}) => {
   return (
       <React.Fragment>
         <Header />
-        <button style={{color: "white", background: color.background, borderRadius: "24px", padding: "10px", marginTop: "10px", position: "absolute", right: "5vw"}} onClick={() => {setDisplayMode(!displayMode)}}>{displayMode ? "Slå auto opdatering fra" : "Slå auto opdatering til"}</button>
+        {/* <button style={{color: "white", background: color.background, borderRadius: "24px", padding: "10px", marginTop: "10px", position: "absolute", right: "5vw"}} onClick={() => {setDisplayMode(!displayMode)}}>{displayMode ? "Slå auto opdatering fra" : "Slå auto opdatering til"}</button> */}
         <div style={{marginTop: "50px"}}>
           {machines.filter(machine => machine.active == 1).length < 1 ? <h1 style={{fontSize: "48px", marginTop: "200px"}}>Ingen aktive vandinger</h1> : <></>}
           {machines.filter(machine => new Date() > new Date(machine.time) && machine.active == 1 && machine.time == null).length > 0 ? <h1 className={machinestyles.tableLabel}>Vandinger uden tider</h1> : <></>}
