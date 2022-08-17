@@ -84,7 +84,7 @@ const Overview = ({machineProps, pumpProps}) => {
           {machines.filter(machine => machine.active == 1).length < 1 ? <h1 style={{fontSize: "48px", marginTop: "200px"}}>Ingen aktive vandinger</h1> : <></>}
           {machines.filter(machine => new Date() > new Date(machine.time) && machine.active == 1 && machine.time == null).length > 0 ? <h1 className={machinestyles.tableLabel}>Vandinger uden tider</h1> : <></>}
           <div className={machinestyles.machineContainer}>
-            {machines ? machines.filter(machine => new Date() > new Date(machine.time) && machine.active == 1 && machine.time == null).sort((a, b) => a.time - b.time).map(function(machine) {
+            {machines ? machines.filter(machine => new Date() > new Date(machine.time) && machine.active == 1 && machine.time == null).sort((a, b) => new Date(a.time) - new Date(b.time)).map(function(machine) {
                   var datePart = new Date(machine["time"]).toLocaleString("da-DK", {
                     month: "short", day: "numeric"
                   });
@@ -138,7 +138,7 @@ const Overview = ({machineProps, pumpProps}) => {
           </div>
           {machines.filter(machine => new Date() > new Date(machine.time) && machine.active == 1 && machine.time != null).length > 0 ? <h1 className={machinestyles.tableLabel}>Færdige vandinger</h1> : <></>}
           <div className={machinestyles.machineContainer}>
-            {machines ? machines.filter(machine => new Date() > new Date(machine.time) && machine.active == 1 && machine.time != null).sort((a, b) => a.time - b.time).map(function(machine) {
+            {machines ? machines.filter(machine => new Date() > new Date(machine.time) && machine.active == 1 && machine.time != null).sort((a, b) => new Date(a.time) - new Date(b.time)).map(function(machine) {
                   var datePart = new Date(machine["time"]).toLocaleString("da-DK", {
                     month: "short", day: "numeric"
                   });
@@ -193,7 +193,7 @@ const Overview = ({machineProps, pumpProps}) => {
 
           {machines.filter(machine => new Date() < new Date(machine.time) && machine.active == 1).length > 0 ? <h1 className={machinestyles.tableLabel}>Aktive vandinger</h1> : <></>}
           <div className={machinestyles.machineContainer}>
-            {machines ? machines.filter(machine => new Date() < new Date(machine.time) && machine.active == 1).sort((a, b) => a.time - b.time).map(function(machine) {
+            {machines ? machines.filter(machine => new Date() < new Date(machine.time) && machine.active == 1).sort((a, b) => new Date(a.time) - new Date(b.time)).map(function(machine) {
               var datePart = new Date(machine["time"]).toLocaleString("da-DK", {
                 month: "short", day: "numeric"
               });
